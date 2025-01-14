@@ -3,65 +3,66 @@ layout: page
 title: Mon parcours
 description: "Ceci est un exemple de CV que vous pouvez générer par vous-même"
 menubar: menu_bar
-download_cv: assets/docs/Template_CV.pdf
 ---
 
 ## Formation 
 
-`20XX – 20XX`
-**Nom de votre école**
-
-Elève ingénieur en [préciser la spécialité]
-* Cours : préciser les cours en phase avec le poste visé
-
-`20XX – 20XX`
-**DUT [préciser la spécialité]** - Université [préciser le lieu]
-* Cours : préciser les cours en phase avec le poste visé
-
-`20XX`
-Bac [préciser la spécialité], mention éventuelle, Lieu
+{% for education in site.data.resume.education %}
+`{{ education.startDate | date: "%Y" }} – {{ education.endDate | date: "%Y" }}`
+**{{ education.institution }}**
+- {{ education.studyType }} en {{ education.area }}
+{% if education.courses %}
+  * Cours : {% for course in education.courses %}{{ course }}{% if forloop.last == false %}, {% endif %}{% endfor %}
+{% endif %}
+{% endfor %}
 
 ## Expériences
 
-`20XX` **Projet d’étude – préciser le thème du projet**
+{% for work in site.data.resume.work %}
+`{{ work.startDate | date: "%Y" }} – {{ work.endDate | date: "%Y" }}`
+**{{ work.name }}** - {{ work.position }}
+- {{ work.summary }}
+{% if work.highlights %}
+  {% for highlight in work.highlights %}
+  * {{ highlight }}
+  {% endfor %}
+{% endif %}
+{% endfor %}
 
-_Réalisé en équipe de XX étudiants_
-* Description des missions (outils utilisés, réalisations, chiffres clés)
-* Description des missions (outils utilisés, réalisations, chiffres clés)
-* Description des missions (outils utilisés, réalisations, chiffres clés)
-
-
-`20XX` **Entreprise, secteur activité, description site rejoint, taille, ville**
-
-_Stage – intitulé du poste_
-* Description des missions (outils utilisés, réalisations, chiffres clés)
-* Description des missions (outils utilisés, réalisations, chiffres clés)
-* Description des missions (outils utilisés, réalisations, chiffres clés)
-
-`20XX` **Association, description de l’asso., taille**
-
-_Intitulé du poste dans une équipe de XX membres_
-* Description des missions (outils utilisés, réalisations, chiffres clés)
+{% for volunteer in site.data.resume.volunteer %}
+`{{ volunteer.startDate | date: "%Y" }} – {{ volunteer.endDate | date: "%Y" }}`
+**{{ volunteer.organization }}** - {{ volunteer.position }}
+- {{ volunteer.summary }}
+{% if volunteer.highlights %}
+  {% for highlight in volunteer.highlights %}
+  * {{ highlight }}
+  {% endfor %}
+{% endif %}
+{% endfor %}
 
 ## Compétences
 
-Langues
-* LV1 à préciser : niveau à préciser (résultat d’examen)
-* LV2 à préciser : niveau à préciser (résultat d’examen)
+### Langues
+{% for language in site.data.resume.languages %}
+- {{ language.language }} : {{ language.fluency }}
+{% endfor %}
 
-Informatique
-* Logiciels maitrisés
-* Logiciels maitrisés
-
-Autres
-* Autres diplômes ou permis spéciaux
+### Informatique
+{% for skill in site.data.resume.skills %}
+- {{ skill.name }} : {% for keyword in skill.keywords %}{{ keyword }}{% if forloop.last == false %}, {% endif %}{% endfor %}
+{% endfor %}
 
 ## Centres d’intérêt
 
-Loisirs 1
-* Description 
-* Description 
+{% for interest in site.data.resume.interests %}
+### {{ interest.name }}
+{% for keyword in interest.keywords %}
+- {{ keyword }}
+{% endfor %}
+{% endfor %}
 
-Loisirs 1
-* Description 
-* Description 
+## Références
+
+{% for reference in site.data.resume.references %}
+- {{ reference.name }} : {{ reference.reference }}
+{% endfor %}

@@ -1,22 +1,19 @@
 ---
 layout: promo-page
 title: Qui suis-je?
-description: "Ceci est un exemple de CV que vous pouvez générer par vous-même"
+description: "Ceci est un exemple de resume que vous pouvez générer par vous-même"
 menubar: menu_bar
-hero_image: assets/imgs/image.png
-hero_image_alt: Ma photo
+hero_image: assets/imgs/profile.jpg
 hero_image_ratio: is-1by1
 ---
 
-# Prénom NOM
-Elève ingénieur en [préciser sa spécialité]
+# {{ site.data.resume.basics.name }}
+{{ site.data.resume.basics.label }}
 
+Disponible {{ site.data.resume.basics.availability | default: "XX mois" }} à partir de {{ site.data.resume.basics.startDate | date: "%d/%m/%Y" }}
 
-Disponible XX mois à partir de Date
+[{{ site.data.resume.basics.email }}](mailto:{{ site.data.resume.basics.email }})
 
-[Prenom.Nom[at]xxx.com](mailto:Prenom.Nom@xxx.com)
-
-[LinkedIn](https://www.linkedin.com/in/Prenom.Nom)
-
-Permis B, voiture
-
+{% for profile in site.data.resume.basics.profiles %}
+- [{{ profile.network }}]({{ profile.url }})
+{% endfor %}
