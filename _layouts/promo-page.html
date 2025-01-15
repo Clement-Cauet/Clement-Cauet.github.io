@@ -26,22 +26,13 @@
                                         {{ content }}
                                     </div>
                                 </div>
-                                <div class="card-footer">
-                                    {% if page.hero_link %}
-                                        <div class="card-footer-item">
-                                            <a href="{{ page.hero_link }}" class="button is-large is-primary">
-                                                {{- page.hero_link_text -}}
-                                            </a>
-                                        </div>
-                                    {% endif %}
-                                </div>
                             </div>
                         </div>
                         <div class="column is-6-tablet is-6-desktop is-relative">
-                            <figure class="image {{ page.hero_image_ratio | default: 'is-4by3' }}">
-                                <img src="{{ page.hero_image }}" alt="{{ page.hero_image_alt }}">
+                            <figure class="image {{ page.hero_image_ratio | default: 'is-1by1' }}">
+                                <img src="{{ page.hero_image | default: site.data.resume.basics.picture }}" class="profile-picture" alt="{{ page.hero_image_alt }}">
                             </figure>
-                        </div>
+                        </div>                      
                     </div>
                 </div>
             </div>

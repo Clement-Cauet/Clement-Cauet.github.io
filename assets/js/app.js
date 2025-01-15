@@ -1,43 +1,52 @@
-document.getElementById('viewCV').addEventListener('click', async () => {
+fetchResume();
+
+async function fetchResume() {
     try {
-        const response = await fetch('https://registry.jsonresume.org/Clement-Cauet');
+        const response = await fetch('https://gist.githubusercontent.com/Clement-Cauet/f842b0450dec8ce789854e5279b401dd/raw');
         if (!response.ok) throw new Error('Erreur lors du chargement du contenu');
-        const htmlContent = await response.text();
-        openModalWithContent(htmlContent);
+        resume = await response.json();
     } catch (error) {
         console.error("Erreur lors du chargement du CV :", error);
     }
-});
-
-function openModalWithContent(content) {
-    document.querySelector('.modal').style.display = 'flex';
-    document.querySelector('.overlay').style.display = 'flex';
-    document.querySelector('#modal-content').innerHTML = content;
 }
 
-document.querySelector('.overlay').addEventListener('click', () => {
-    document.querySelector('.modal').style.display = 'none';
-    document.querySelector('.overlay').style.display = 'none';
-    document.querySelector('#modal-content').innerHTML = '';
-});
+document.addEventListener('DOMContentLoaded', function () {
+    let navbarHeight = document.querySelector('.navbar').offsetHeight;
+    let sidebarHeight = document.querySelector('.sidebar').offsetHeight;
 
-document.querySelector('.close').addEventListener('click', () => {
-    document.querySelector('.modal').style.display = 'none';
-    document.querySelector('.overlay').style.display = 'none';
-    document.querySelector('#modal-content').innerHTML = '';
-});
+    function updateHeights() {
+        navbarHeight = document.querySelector('.navbar').offsetHeight;
+        sidebarHeight = document.querySelector('.sidebar').offsetHeight;
 
-document.querySelector('.download').addEventListener('click', () => {
-    const element = document.getElementById('modal-content');
-    const date = new Date().toISOString().split('T')[0];
-    const fileName = `clement-resume-${date}.pdf`;
-    const opt = {
-        margin: 0,
-        filename: fileName,
-        image: { type: 'jpeg', quality: 1 },
-        html2canvas: { scale: 2, useCORS: true },
-        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-    };
+        if (window.location.hash) {
+            scrollToElement(window.location.hash);
+        }
+    }
 
-    html2pdf().set(opt).from(element).save();
+    function scrollToElement(hash) {
+        const decodedHash = decodeURIComponent(hash);
+        const targetElement = document.querySelector(decodedHash);
+        if (targetElement) {
+            let offset = targetElement.offsetTop - navbarHeight;
+            if (window.innerWidth < 769) {
+                offset -= sidebarHeight;
+            }
+            window.scrollTo({
+                top: offset
+            });
+        }
+    }
+
+    if (window.location.hash) {
+        scrollToElement(window.location.hash);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            scrollToElement(this.getAttribute('href'));
+        });
+    });
+
+    window.addEventListener('resize', updateHeights);
 });

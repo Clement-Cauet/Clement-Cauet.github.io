@@ -1,10 +1,10 @@
 ---
 layout: promo-page
-title: Qui suis-je?
+title: Accueil
 description: "Ceci est un exemple de resume que vous pouvez générer par vous-même"
 menubar: menu_bar
-hero_image: assets/imgs/profile.jpg
-hero_image_ratio: is-1by1
+# hero_image:
+# hero_image_ratio:
 ---
 
 # {{ site.data.resume.basics.name }}

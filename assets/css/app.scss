@@ -6,15 +6,89 @@
 }
 
 $family-primary: "Indivisa Text Sans-Regular",sans-serif;
-$primary: #ef2e31;
-$link: #ef2e31;
+$primary: #56817a;
+$secondary: #4b716b;
+$link: $primary;
 // Import Main CSS file from theme
 @import "main";
+
+.navbar {
+    box-shadow: 0 0.3125rem 1.25rem 0 rgba(0,0,0,0.36);
+}
 
 .navbar-item img {
     max-height: 2.75rem;
 }
 
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    position: -webkit-sticky;
+    position: sticky;
+    overflow-y: auto;
+    max-height: calc(100vh - 8rem);
+    top: 6rem;
+    background-color: white;
+    gap: 2rem;
+
+    button {
+        color: white;
+        background-color: $primary;
+        padding: 0.5rem 1rem;
+        border-radius: 0.25rem;
+        width: 80%;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: $secondary;
+    }
+}
+
 .menu-label {
     font-size : 1em;
+}
+
+.menu-list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+
+    li {
+        cursor: pointer;
+        margin-bottom: 0.5rem;
+
+        a:hover {
+            color: $primary;
+        }
+    }
+}
+
+.profile-picture {
+    border: $primary 1px solid;
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 769px) {
+    .sidebar {
+        top: 3rem;
+
+        button {
+            align-self: center;
+        }
+    }
+
+    .menu-list {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    li {
+        margin-bottom: 0;
+    }
+
+    li:last-child {
+        margin-right: 0;
+    }
+    
 }

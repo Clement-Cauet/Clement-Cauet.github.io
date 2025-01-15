@@ -1,3 +1,5 @@
+- name : Accueil
+  link: /
 - name: Mon parcours
   link: /parcours/
 - name: Mes réalisations

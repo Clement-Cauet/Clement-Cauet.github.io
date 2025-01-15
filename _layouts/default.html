@@ -30,10 +30,9 @@
                     {% include toc.html html=content class='menu-list' h_min=2 h_max=3 contents_title=contentsTitle %}
                 </div>
                 {% elsif page.menubar %}
-                <div class="column is-4-desktop is-4-tablet">
+                <div class="column sidebar is-4-desktop is-4-tablet">
                     {% include menubar.html %}
-                    <br>
-                    <a id="viewCV" href="javascript:void(0)">Voir mon CV</a>
+                    <button id="displayCV" onclick="javascript:void(0)">Voir mon CV</button> 
                 </div>
                 {% endif %}
                 <div class="column {{ content_width }}">
@@ -68,6 +67,8 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="{{ site.baseurl }}/assets/js/app.js" type="text/javascript"></script>
+    <script src="{{ site.baseurl }}/assets/js/parcours.js" type="text/javascript"></script>
+    {%- include footer-scripts.html -%}
 </body>
 
 </html>

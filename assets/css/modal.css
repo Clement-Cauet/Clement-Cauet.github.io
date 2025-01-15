@@ -50,3 +50,15 @@
 #resume {
     width: 750px;
 }
+
+@media screen and (max-width: 1024px) {
+    .modal {
+        width: 90%;
+        height: 90%;
+    }
+
+    #resume {
+        width: 100%;
+    }
+    
+}
