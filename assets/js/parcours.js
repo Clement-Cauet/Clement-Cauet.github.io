@@ -15,17 +15,14 @@ function openModalWithContent(content) {
     document.querySelector('#modal-content').innerHTML = content;
 }
 
-document.querySelector('.overlay').addEventListener('click', () => {
-    document.querySelector('.modal').style.display = 'none';
-    document.querySelector('.overlay').style.display = 'none';
-    document.querySelector('#modal-content').innerHTML = '';
-});
+document.querySelector('.overlay').addEventListener('click', closeModal);
+document.querySelector('.close').addEventListener('click', closeModal);
 
-document.querySelector('.close').addEventListener('click', () => {
+function closeModal() {
     document.querySelector('.modal').style.display = 'none';
     document.querySelector('.overlay').style.display = 'none';
     document.querySelector('#modal-content').innerHTML = '';
-});
+}
 
 document.querySelector('.download').addEventListener('click', () => {
     const element = document.getElementById('modal-content');
