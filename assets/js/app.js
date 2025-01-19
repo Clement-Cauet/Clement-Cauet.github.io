@@ -11,11 +11,9 @@ async function fetchResume() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    let navbarHeight = document.querySelector('.navbar').offsetHeight;
     let sidebarHeight = document.querySelector('.sidebar').offsetHeight;
 
     function updateHeights() {
-        navbarHeight = document.querySelector('.navbar').offsetHeight;
         sidebarHeight = document.querySelector('.sidebar').offsetHeight;
 
         if (window.location.hash) {
@@ -27,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const decodedHash = decodeURIComponent(hash);
         const targetElement = document.querySelector(decodedHash);
         if (targetElement) {
-            let offset = targetElement.offsetTop - navbarHeight;
+            let offset = targetElement.offsetTop;
             if (window.innerWidth < 769) {
                 offset -= sidebarHeight;
             }

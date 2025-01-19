@@ -3,11 +3,13 @@
     - name: Formation
       link: /parcours#formation
     - name: Expériences
-      link: /parcours#expériences
+      link: /parcours#experience
     - name: Compétences
-      link: /parcours#compétences
+      link: /parcours#skills
+    - name: Langues
+      link: /parcours#languages
     - name: Centres d’intérêt
-      link: /parcours#centres-dintérêt
+      link: /parcours#interests
 # - label: Second Menu Label
 #   items:
 #     - name: Parent Item

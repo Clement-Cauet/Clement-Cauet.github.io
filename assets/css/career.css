@@ -1,0 +1,18 @@
+.section-block {
+    margin-bottom: 3rem;
+}
+
+.section-block h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.section-list p {
+    margin-bottom: 0.5rem;
+}
+
+.section-sublist {
+    margin-bottom: 0.5rem;
+    margin-left: 1.5rem;
+}

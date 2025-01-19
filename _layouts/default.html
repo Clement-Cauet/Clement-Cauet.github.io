@@ -15,6 +15,7 @@
     class="{% if site.fixed_navbar %} has-navbar-fixed-{{ site.fixed_navbar }} {% endif %} {% if site.force_theme %} theme-{{ site.force_theme }} {% endif %}">
 {% include head.html %}
 <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/modal.css">
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/career.css">
 
 <body>
     {% include header.html %}
@@ -36,18 +37,8 @@
                 </div>
                 {% endif %}
                 <div class="column {{ content_width }}">
-                    {% include tabs.html %}
-                    {% include showcase.html %}
-                    {% include sponsors.html %}
-                    {% include gallery.html %}
                     {{ content }}
                 </div>
-                {% if site.posts and page.show_sidebar %}
-                <div class="column is-4-desktop is-4-tablet">
-                    {% include latest-posts.html %}
-                </div>
-                {% endif %}
-
             </div>
         </div>
     </section>

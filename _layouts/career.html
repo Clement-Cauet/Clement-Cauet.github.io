@@ -1,0 +1,80 @@
+---
+layout: default
+show_sidebar: false
+---
+<div class="section-block">
+    <h2 id="formation">Formation</h2>
+
+    {% for education in site.data.resume.education %}
+    <ul class="section-list">
+        <li>
+            <p>
+                <code>{{ education.startDate | date: "%Y" }} – {{ education.endDate | date: "%Y" }}</code>
+                <strong>{{ education.institution }}</strong> - {{ education.studyType }} en {{ education.area }}
+            </p>
+            <ul class="section-sublist">
+                {% for courses in education.courses %}
+                <li>{{ courses }}</li>
+                {% endfor %}
+            </ul>
+        </li>
+    </ul>
+    {% endfor %}
+</div>
+
+<div class="section-block">
+    <h2 id="experience">Expérience</h2>
+
+    {% for work in site.data.resume.work %}
+    <ul class="section-list">
+        <li>
+            <p>
+                <code>{{ work.startDate | date: "%Y" }} – {{ work.endDate | date: "%Y" }}</code>
+                <strong>{{ work.company }}</strong> - {{ work.position }}
+            </p>
+            <ul class="section-sublist">
+                {% for highlights in work.highlights %}
+                <li>{{ highlights }}</li>
+                {% endfor %}
+            </ul>
+        </li>
+    </ul>
+    {% endfor %}
+</div>
+
+<div class="section-block">
+    <h2 id="skills">Compétences</h2>
+
+    {% for skill in site.data.resume.skills %}
+    <ul class="section-list">
+        <li>
+            <strong>{{ skill.name }}</strong>
+            <ul class="section-sublist">
+                {% for keywords in skill.keywords %}
+                <li>{{ keywords }}</li>
+                {% endfor %}
+            </ul>
+        </li>
+    </ul>
+    {% endfor %}
+</div>
+
+<div class="section-block">
+    <h2 id="languages">Langues</h2>
+    <ul>
+        {% for language in site.data.resume.languages %}
+        <li>
+            <strong>{{ language.language }}</strong> - {{ language.fluency }}
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="section-block">
+    <h2 id="interests">Centres d'intérêt</h2>
+    <ul>
+        {% for interest in site.data.resume.interests %}
+        <li>{{ interest.name }}</li>
+        {% endfor %}
+    </ul>
+</div>

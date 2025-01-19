@@ -4,8 +4,10 @@
   link: /parcours/
 - name: Mes réalisations
   link: /realisations/
-# - name: Blog
-#   link: /blog/
-#   dropdown: 
-#     - name: Page 2
-#       link: /page-2/
+  dropdown:
+    - name: Site web
+      link: /realisations/site-web/
+    - name: Application mobile
+      link: /realisations/application-mobile/
+    - name: Autres
+      link: /realisations/autres/
