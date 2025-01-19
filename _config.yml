@@ -16,7 +16,11 @@ collections:
     layout: product
     image: https://via.placeholder.com/800x600
     show_sidebar: false
+  projects:
+    output: true
+    layout: project
+    image: https://via.placeholder.com/800x600
+    show_sidebar: false
 
 plugins:
   - jekyll-remote-include
-

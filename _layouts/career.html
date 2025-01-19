@@ -78,3 +78,19 @@ show_sidebar: false
         {% endfor %}
     </ul>
 </div>
+
+<section class="modal hidden">
+    <div class="modal-header">
+        <div class="header-close">
+            <img src="{{ site.baseurl }}/assets/imgs/close.svg" class="close" alt="X">
+        </div>
+        <div class="header-controls">
+            <img src="{{ site.baseurl }}/assets/imgs/install.svg" class="download" alt="Télécharger">
+        </div>
+    </div>
+    <div id="modal-content"></div>
+</section>
+<div class="overlay hidden"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="{{ site.baseurl }}/assets/js/parcours.js" type="text/javascript"></script>

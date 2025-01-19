@@ -1,0 +1,12 @@
+.card:hover {
+    transform: scale(1.05); 
+}
+
+.topics {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.25rem;
+    padding: 0.5rem;
+}

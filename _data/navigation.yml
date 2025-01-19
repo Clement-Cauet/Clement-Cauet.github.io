@@ -5,9 +5,5 @@
 - name: Mes réalisations
   link: /realisations/
   dropdown:
-    - name: Site web
-      link: /realisations/site-web/
-    - name: Application mobile
-      link: /realisations/application-mobile/
-    - name: Autres
-      link: /realisations/autres/
+    - name: Exemple
+      link: /example

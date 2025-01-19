@@ -10,41 +10,18 @@ async function fetchResume() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    let sidebarHeight = document.querySelector('.sidebar').offsetHeight;
+document.addEventListener('DOMContentLoaded', async() => {
+    const response = await fetch('/assets/json/project.json');
+    const projects = await response.json();
 
-    function updateHeights() {
-        sidebarHeight = document.querySelector('.sidebar').offsetHeight;
-
-        if (window.location.hash) {
-            scrollToElement(window.location.hash);
-        }
-    }
-
-    function scrollToElement(hash) {
-        const decodedHash = decodeURIComponent(hash);
-        const targetElement = document.querySelector(decodedHash);
-        if (targetElement) {
-            let offset = targetElement.offsetTop;
-            if (window.innerWidth < 769) {
-                offset -= sidebarHeight;
-            }
-            window.scrollTo({
-                top: offset
-            });
-        }
-    }
-
-    if (window.location.hash) {
-        scrollToElement(window.location.hash);
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            scrollToElement(this.getAttribute('href'));
-        });
+    const dropdownMenu = document.querySelector('.navbar-dropdown');
+    let dropdownContent = '';
+    projects.forEach(project => {
+        dropdownContent += `
+            <a href="/projects/project?owner=${project.owner}&repo=${project.repo}" class="navbar-item">
+                ${project.repo}
+            </a>
+        `;
     });
-
-    window.addEventListener('resize', updateHeights);
+    dropdownMenu.innerHTML = dropdownContent;
 });

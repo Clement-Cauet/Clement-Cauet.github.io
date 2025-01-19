@@ -13,6 +13,7 @@ module Jekyll
 
             if response.is_a?(Net::HTTPSuccess)
                 site.data['resume'] = JSON.parse(response.body)
+                Jekyll.logger.info "Resume JSON fetched successfully from Gist:", gist_url
             else
                 Jekyll.logger.warn "Failed to fetch resume JSON from Gist:", gist_url
             end
