@@ -14,4 +14,4 @@ end
 # gem "just-the-docs"        # always download the latest release
 gem 'webrick'
 
-gem 'dotenv'
+gem 'jekyll-dotenv'
