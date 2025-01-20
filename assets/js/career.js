@@ -38,8 +38,9 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.getElementById('displayCV').addEventListener('click', async () => {
+    const ownerName = document.querySelector('meta[name="owner-name"]').content;
     try {
-        const response = await fetch('https://registry.jsonresume.org/Clement-Cauet');
+        const response = await fetch(`https://registry.jsonresume.org/${ownerName}`);
         if (!response.ok) throw new Error('Erreur lors du chargement du contenu');
         const htmlContent = await response.text();
         openModalWithContent(htmlContent);

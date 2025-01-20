@@ -7,7 +7,7 @@ module Jekyll
         safe true
 
         def generate(site)
-            gist_url = 'https://gist.githubusercontent.com/Clement-Cauet/f842b0450dec8ce789854e5279b401dd/raw'
+            gist_url = site.data['env']['gist_url']
             uri = URI.parse(gist_url)
             response = Net::HTTP.get_response(uri)
 
