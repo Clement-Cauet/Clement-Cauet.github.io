@@ -1,8 +1,14 @@
 [
     {
         "owner": "Clement-Cauet",
+        "repo": "FakeStore",
+        "logo": "https://fakestoreapi.com/icons/logo.png",
+        "url": "https://github.com/Clement-Cauet/FakeStore"
+    },
+    {
+        "owner": "Clement-Cauet",
         "repo": "UniVbox",
-        "logo": "https://avatars.githubusercontent.com/u/70692830?s=400&u=cac932fa74c596fc7d2f7bed91e8a25f97ebc78e&v=4",
+        "logo": "",
         "url": "https://github.com/Clement-Cauet/UniVbox"
     },
     {
