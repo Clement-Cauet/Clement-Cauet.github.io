@@ -5,14 +5,47 @@
 .section-block h2 {
     font-size: 2rem;
     font-weight: 700;
+    color: #56817a;
     margin-bottom: 1rem;
 }
 
-.section-list p {
+.section-block h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
     margin-bottom: 0.5rem;
 }
 
-.section-sublist {
+.section-list {
+    margin-bottom: 2rem;
+}
+
+.section-header {
+    display: grid;
+    grid-template-columns: minmax(12rem, auto) 1fr;
     margin-bottom: 0.5rem;
-    margin-left: 1.5rem;
+    gap: 1rem;
+}
+
+.section-sublist {
+    list-style: inside;
+    margin-left: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.section-sublist-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+}
+
+.card-header {
+    padding: 1rem;
+}
+
+@media screen and (max-width: 769px) {
+    .section-header {
+        grid-template-columns: 1fr;
+    }
 }

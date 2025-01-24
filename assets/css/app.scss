@@ -89,6 +89,7 @@ $link: $primary;
 @media screen and (max-width: 769px) {
     .sidebar {
         top: 3rem;
+        z-index: 1;
 
         button {
             align-self: center;
