@@ -9,6 +9,15 @@ async function fetchResume() {
     }
 }
 
+function extractOwnerRepo(url) {
+    const regex = /https:\/\/github\.com\/([^\/]+)\/([^\/]+)/;
+    const match = url.match(regex);
+    if (match) {
+        return { owner: match[1], repo: match[2] };
+    }
+    return null;
+}
+
 async function loadMenuProjects() {
     try {
         const response = await fetch('/assets/json/project.json');
@@ -17,9 +26,10 @@ async function loadMenuProjects() {
         const dropdownMenu = document.querySelector('.navbar-dropdown');
         let dropdownContent = '';
         projects.forEach(project => {
+            const { owner, repo } = extractOwnerRepo(project.url);
             dropdownContent += `
-                <a href="/projects/project?owner=${project.owner}&repo=${project.repo}" class="navbar-item">
-                    ${project.repo}
+                <a href="/projects/project?owner=${owner}&repo=${repo}" class="navbar-item">
+                    ${project.name}
                 </a>
             `;
         });

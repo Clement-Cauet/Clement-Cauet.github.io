@@ -16,7 +16,7 @@
     position: fixed;
     top: 10%;
     height: calc(90% - 2rem);
-    width: fit-content;
+    width: calc(210mm + 4rem);
     padding: 1rem;
     margin-left: auto;
     margin-right: auto;
@@ -43,22 +43,13 @@
 
 #modal-content {
     padding: 1rem;
-    min-height: auto;
+    width: 100%;
+    height: 100%;
     overflow-y: auto;
-}
-
-#resume {
-    width: 750px;
 }
 
 @media screen and (max-width: 1024px) {
     .modal {
         width: 90%;
-        height: 90%;
-    }
-
-    #resume {
-        width: 100%;
-    }
-    
+    }    
 }

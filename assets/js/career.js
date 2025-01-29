@@ -50,9 +50,14 @@ document.getElementById('displayCV').addEventListener('click', async () => {
 });
 
 function openModalWithContent(content) {
+    const iframe = document.getElementById('modal-iframe');
+    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+    iframeDoc.open();
+    iframeDoc.write(content);
+    iframeDoc.close();
+
     document.querySelector('.modal').style.display = 'flex';
     document.querySelector('.overlay').style.display = 'flex';
-    document.querySelector('#modal-content').innerHTML = content;
 }
 
 document.querySelector('.overlay').addEventListener('click', closeModal);
@@ -61,20 +66,25 @@ document.querySelector('.close').addEventListener('click', closeModal);
 function closeModal() {
     document.querySelector('.modal').style.display = 'none';
     document.querySelector('.overlay').style.display = 'none';
-    document.querySelector('#modal-content').innerHTML = '';
 }
 
-document.querySelector('.download').addEventListener('click', () => {
-    const element = document.getElementById('modal-content');
+document.querySelector('.download').addEventListener('click', async () => {
+    const ownerName = document.querySelector('meta[name="owner-name"]').content;
+    const response = await fetch(`https://registry.jsonresume.org/${ownerName}`);
+    const data = await response.text();
+
+    const iframe = document.getElementById('modal-iframe');
+    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+    iframeDoc.body.innerHTML = data;
+
     const date = new Date().toISOString().split('T')[0];
     const fileName = `${resume.basics.name.replace(/\s+/g, '-').toLowerCase()}-resume-${date}.pdf`;
     const opt = {
         margin: 0,
         filename: fileName,
-        image: { type: 'jpeg', quality: 1 },
-        html2canvas: { scale: 2, useCORS: true },
+        html2canvas: { scale: 1, useCORS: true },
         jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
     };
 
-    html2pdf().set(opt).from(element).save();
+    html2pdf().set(opt).from(iframeDoc.body).save();
 });

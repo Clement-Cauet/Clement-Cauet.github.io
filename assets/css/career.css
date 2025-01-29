@@ -4,8 +4,9 @@
 
 .section-block h2 {
     font-size: 2rem;
-    font-weight: 700;
-    color: #56817a;
+    font-weight: bold;
+    color: #0077CC;
+    text-transform: uppercase;
     margin-bottom: 1rem;
 }
 
@@ -24,6 +25,17 @@
     grid-template-columns: minmax(12rem, auto) 1fr;
     margin-bottom: 0.5rem;
     gap: 1rem;
+}
+
+.section-information {
+    display: grid;
+    grid-template-columns: minmax(12rem, auto) 1fr;
+}
+
+.section-information p,
+.section-information a,
+.section-information ul {
+    color: #0077CC;
 }
 
 .section-sublist {

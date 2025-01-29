@@ -6,11 +6,18 @@
 }
 
 $family-primary: "Indivisa Text Sans-Regular",sans-serif;
-$primary: #56817a;
-$secondary: #4b716b;
+$primary: #0077CC;
+$secondary: #0055AA;
+$font-color-primary: #333333;
+$font-color-secondary: #F7F7F7;
+$background-color: #F7F7F7;
 $link: $primary;
 
 @import "main";
+
+code {
+    color: var(--bulma-body-color);
+}
 
 .navbar {
     box-shadow: 0 0.3125rem 1.25rem 0 rgba(0,0,0,0.36);
@@ -29,6 +36,7 @@ $link: $primary;
     max-height: calc(100vh - 8rem);
     top: 6rem;
     background-color: white;
+    text-transform: uppercase;
     gap: 2rem;
 
     button {

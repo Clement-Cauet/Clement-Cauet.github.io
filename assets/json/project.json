@@ -1,26 +1,37 @@
 [
     {
-        "owner": "Clement-Cauet",
-        "repo": "FakeStore",
+        "name": "FakeStore",
         "logo": "https://fakestoreapi.com/icons/logo.png",
         "url": "https://github.com/Clement-Cauet/FakeStore"
     },
     {
-        "owner": "Clement-Cauet",
-        "repo": "UniVbox",
+        "name": "UniVbox",
         "logo": "",
         "url": "https://github.com/Clement-Cauet/UniVbox"
     },
     {
-        "owner": "laravel",
-        "repo": "laravel",
-        "logo": "https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg",
-        "url": "https://github.com/laravel/laravel"
+        "name": "JsonResume",
+        "logo": "https://avatars.githubusercontent.com/u/7943272?s=200&v=4",
+        "url": "https://github.com/Clement-Cauet/jsonresume-theme-lucide"
     },
     {
-        "owner": "wayou",
-        "repo": "HTML5_Audio_Visualizer",
-        "logo": "https://camo.githubusercontent.com/b372f919c3da48e00ed94e8eea33228a63f783238c7666d837a2adc5495535fd/68747470733a2f2f7261772e6769746875622e636f6d2f5761796f752f48544d4c355f417564696f5f56697375616c697a65722f6d61737465722f736f75726365732f73637265656e636170747572652e706e67",
-        "url": "https://github.com/wayou/HTML5_Audio_Visualizer"
+        "name": "ClimbSense",
+        "logo": "",
+        "url": "https://github.com/Clement-Cauet/ClimbSense"
+    },
+    {
+        "name": "Navigateur-Web",
+        "logo": "",
+        "url": "https://github.com/Gregory-febvin/Navigateur-Web"
+    },
+    {
+        "name": "SFM-Hell",
+        "logo": "",
+        "url": "https://github.com/Gregory-febvin/SFM-Hell"
+    },
+    {
+        "name": "SpaceKuukan",
+        "logo": "",
+        "url": "https://github.com/Clement-Cauet/SpaceKuukan"
     }
 ]
