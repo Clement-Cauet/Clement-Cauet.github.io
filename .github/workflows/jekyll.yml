@@ -55,10 +55,10 @@ jobs:
 
       # Generate PDF resume on server and move it to _site
       - name: Install resume-cli
-        run: npm install resume-cli
+        run: npm install -g resume-cli
       
       - name: Install Lucide theme
-        run: npm install jsonresume-theme-lucide
+        run: npm install -g jsonresume-theme-lucide
 
       - name: Fetch resume.json from Gist
         run: curl -o resume.json "${{ secrets.GIST_URL }}"
