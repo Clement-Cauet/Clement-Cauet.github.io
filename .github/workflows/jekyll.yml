@@ -63,9 +63,12 @@ jobs:
       - name: Fetch resume.json from Gist
         run: curl -o resume.json "${{ secrets.GIST_URL }}"
 
+      - name: Debug resume.json
+        run: cat resume.json
+
       - name: Generate PDF resume
         run: |
-          resume export resume.pdf --theme lucide --format pdf --resume "${{ secrets.GIST_URL }}"
+          resume export resume.pdf --theme lucide --format pdf || echo "❌ Erreur lors de la génération du PDF"
           sleep 5
 
       - name: Verify PDF exists
