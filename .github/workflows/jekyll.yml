@@ -52,7 +52,7 @@ jobs:
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v3
-        
+
       # Generate PDF resume on server and move it to _site
       - name: Install resume-cli
         run: npm install -g resume-cli
@@ -65,8 +65,8 @@ jobs:
 
       - name: Generate PDF resume
         run: |
-          resume export resume.pdf --theme lucide --format pdf
-          sleep 5  # Attendre 5 secondes pour s'assurer que la génération est terminée
+          resume export resume.pdf --theme lucide --format pdf --verbose
+          sleep 5
 
       - name: Verify PDF exists
         run: ls -l resume.pdf
