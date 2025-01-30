@@ -60,12 +60,6 @@ jobs:
       - name: Install Lucide theme locally
         run: npm install jsonresume-theme-lucide
 
-      - name: Verify installation
-        run: |
-          which resume
-          resume --version
-          resume themes
-
       - name: Fetch resume.json from Gist
         run: curl -o resume.json "${{ secrets.GIST_URL }}"
 
