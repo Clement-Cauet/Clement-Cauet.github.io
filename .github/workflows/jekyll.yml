@@ -55,16 +55,10 @@ jobs:
 
       # Generate PDF resume on server and move it to _site
       - name: Install resume-cli
-        run: npm install -g resume-cli
+        run: npm install resume-cli
       
       - name: Install Lucide theme
-        run: npm install -g jsonresume-theme-lucide
-
-      - name: Check resume-cli version
-        run: resume --version
-
-      - name: List installed resume themes
-        run: resume themes
+        run: npm install jsonresume-theme-lucide
 
       - name: Fetch resume.json from Gist
         run: curl -o resume.json "${{ secrets.GIST_URL }}"
@@ -73,20 +67,10 @@ jobs:
         run: cat resume.json
 
       - name: Generate PDF resume
-        run: |
-          resume export resume.pdf --theme lucide --format pdf
-          sleep 5
-
-      - name: Verify PDF exists
-        run: ls -l resume.pdf
+        run: resume export resume.pdf --theme lucide --format pdf
 
       - name: Move PDF resume to Jekyll site
-        run: |
-          if [ -f "resume.pdf" ]; then
-            mv resume.pdf _site/
-          else
-            echo "❌ Erreur : resume.pdf n'a pas été généré !" && exit 1
-          fi
+        run: mv resume.pdf _site/
 
   # Deployment job
   deploy:
