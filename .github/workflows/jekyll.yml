@@ -70,12 +70,12 @@ jobs:
         run: ls -l resume.json
 
       - name: Generate PDF resume
-        run: |
-          resume export resume.pdf --theme lucide --format pdf
-          sleep 5
+        run: resume export resume.pdf --theme lucide --format pdf
 
       - name: Verify PDF exists
-        run: ls -l resume.pdf
+        run: |
+          sleep 5
+          ls -l resume.pdf
 
       - name: Move PDF resume to Jekyll site
         run: mv resume.pdf _site/
