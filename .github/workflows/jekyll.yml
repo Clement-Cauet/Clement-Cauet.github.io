@@ -52,6 +52,7 @@ jobs:
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v3
+        
       # Generate PDF resume on server and move it to _site
       - name: Install resume-cli
         run: npm install -g resume-cli
@@ -63,10 +64,20 @@ jobs:
         run: curl -o resume.json "${{ secrets.GIST_URL }}"
 
       - name: Generate PDF resume
-        run: resume export resume.pdf --theme lucide --format pdf
+        run: |
+          resume export resume.pdf --theme lucide --format pdf
+          sleep 5  # Attendre 5 secondes pour s'assurer que la génération est terminée
+
+      - name: Verify PDF exists
+        run: ls -l resume.pdf
 
       - name: Move PDF resume to Jekyll site
-        run: mv resume.pdf _site/
+        run: |
+          if [ -f "resume.pdf" ]; then
+            mv resume.pdf _site/
+          else
+            echo "❌ Erreur : resume.pdf n'a pas été généré !" && exit 1
+          fi
 
   # Deployment job
   deploy:
