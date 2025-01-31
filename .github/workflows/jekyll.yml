@@ -66,10 +66,11 @@ jobs:
       - name: Generate PDF resume
         run: resume export resume.pdf --theme lucide --format pdf
 
+      - name: Create PDF directory
+        run: mkdir -p assets/pdf
+
       - name: Move PDF resume to assets
-        run: |
-          mkdir -p assets/pdf
-          mv resume.pdf assets/pdf
+        run: mv resume.pdf assets/pdf
 
   # Deployment job
   deploy:
