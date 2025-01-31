@@ -49,10 +49,7 @@ jobs:
           JEKYLL_ENV: production
           GIST_URL: ${{ secrets.GIST_URL }}
           OWNER_NAME: ${{ secrets.OWNER_NAME }}
-      - name: Upload artifact
-        # Automatically uploads an artifact from the './_site' directory by default
-        uses: actions/upload-pages-artifact@v3
-
+      
       # Generate PDF resume on server and move it to _site
       - name: Install resume-cli
         run: npm install -g resume-cli
@@ -71,6 +68,10 @@ jobs:
 
       - name: Move PDF resume to assets
         run: mv resume.pdf assets/pdf
+
+      # Automatically uploads an artifact from the './_site' directory by default
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
 
   # Deployment job
   deploy:
