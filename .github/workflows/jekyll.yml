@@ -49,7 +49,10 @@ jobs:
           JEKYLL_ENV: production
           GIST_URL: ${{ secrets.GIST_URL }}
           OWNER_NAME: ${{ secrets.OWNER_NAME }}
-      
+      - name: Upload artifact
+        # Automatically uploads an artifact from the './_site' directory by default
+        uses: actions/upload-pages-artifact@v3
+
       # Generate PDF resume on server and move it to _site
       - name: Install resume-cli
         run: npm install -g resume-cli
@@ -60,18 +63,29 @@ jobs:
       - name: Fetch resume.json from Gist
         run: curl -o resume.json "${{ secrets.GIST_URL }}"
 
+      - name: Verify resume.json
+        run: cat resume.json
+
       - name: Generate PDF resume
         run: resume export resume.pdf --theme lucide --format pdf
+
+      - name: Verify PDF resume
+        run: file resume.pdf
 
       - name: Create PDF directory
         run: mkdir -p assets/pdf
 
-      # Automatically uploads an artifact from the './_site' directory by default
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Verify PDF directory
+        run: ls assets/pdf
 
       - name: Move PDF resume to assets
-        run: mv resume.pdf assets/pdf
+        run: |
+          if [ -f resume.pdf ]; then
+            mv resume.pdf assets/pdf
+          else
+            echo "resume.pdf not found"
+            exit 1
+          fi
 
   # Deployment job
   deploy:
