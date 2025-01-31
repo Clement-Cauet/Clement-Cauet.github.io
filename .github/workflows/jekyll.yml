@@ -67,7 +67,9 @@ jobs:
         run: cat resume.json
 
       - name: Generate PDF resume
-        run: resume export resume.pdf --theme lucide --format pdf
+        run: |
+          export PUPPETEER_EXECUTABLE_PATH=$(which chromium) 
+          resume export resume.pdf --theme lucide --format pdf --puppeteerArgs "--no-sandbox --disable-setuid-sandbox"
 
       - name: Debug current directory
         run: pwd && ls -la
