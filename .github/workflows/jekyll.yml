@@ -58,7 +58,7 @@ jobs:
         run: npm install -g resume-cli
       
       - name: Install Lucide theme
-        run: npm install -g jsonresume-theme-lucide
+        run: npm install jsonresume-theme-lucide
 
       - name: Fetch resume.json from Gist
         run: curl -o resume.json "${{ secrets.GIST_URL }}"
