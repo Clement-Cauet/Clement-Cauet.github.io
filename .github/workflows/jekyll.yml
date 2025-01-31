@@ -66,12 +66,12 @@ jobs:
       - name: Create PDF directory
         run: mkdir -p assets/pdf
 
-      - name: Move PDF resume to assets
-        run: mv resume.pdf assets/pdf
-
       # Automatically uploads an artifact from the './_site' directory by default
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+
+      - name: Move PDF resume to assets
+        run: mv resume.pdf assets/pdf
 
   # Deployment job
   deploy:
