@@ -50,6 +50,10 @@ jobs:
           GIST_URL: ${{ secrets.GIST_URL }}
           OWNER_NAME: ${{ secrets.OWNER_NAME }}
 
+      # Automatically uploads an artifact from the './_site' directory by default
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+
       # Generate resume
       - name: Install resume-cli
         run: npm install -g resume-cli
@@ -66,9 +70,11 @@ jobs:
       - name: Generate resume
         run: resume export resume.pdf --theme lucide --format pdf
 
-      - name: Upload artifact
-        # Automatically uploads an artifact from the './_site' directory by default
-        uses: actions/upload-pages-artifact@v3
+      - name: Verify structure
+        run: pwd && ls -la
+
+      - name: Move resume to assets
+        run: mv resume.pdf assets/pdf/resume.pdf
 
 
   # Deployment job
