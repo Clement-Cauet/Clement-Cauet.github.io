@@ -65,6 +65,9 @@ jobs:
       - name: Generate resume
         run: resume export assets/pdf/resume.pdf --resume assets/json/resume.json --theme lucide --format pdf
 
+      - name: Debug output
+        run: ls -l assets/pdf
+
   # Deployment job
   deploy:
     environment:
