@@ -60,11 +60,13 @@ jobs:
       - name: Fetch resume data
         run: curl -o resume.json "${{ secrets.GIST_URL }}"
 
-      - name: Generate resume
-        run: PUPPETEER_EXECUTABLE_PATH=$(which chromium) PUPPETEER_ARGS="--no-sandbox" resume export resume.pdf --theme lucide --format pdf
+      - name: Set Puppeteer config
+        run: echo '{"args":["--no-sandbox"]}' > ~/.puppeteerrc.json
 
-      - name: Move resume to assets
-        run: mv resume.pdf assets/pdf/resume.pdf
+      - name: Generate resume
+        env:
+          PUPPETEER_CONFIG: ~/.puppeteerrc.json
+        run: resume export resume.pdf --theme lucide --format pdf
 
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
