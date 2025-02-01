@@ -1,0 +1,156 @@
+{
+    "meta": {
+        "theme": "lucide"
+    },
+    "basics": {
+        "name": "Clément Cauet",
+        "phone": "+33 6 01 05 54 09",
+        "label": "Développeur d'application",
+        "picture": "https://avatars.githubusercontent.com/u/70692830?s=400&u=cac932fa74c596fc7d2f7bed91e8a25f97ebc78e&v=4",
+        "summary": "Motivé par la création de solutions techniques qui facilitent la vie des utilisateurs, je combine autonomie, adaptabilité et esprit d’analyse pour relever des défis complexes. Mon objectif : concevoir des outils performants et intuitifs, toujours centrés sur les besoins réels.",
+        "website": "https://clement-cauet.github.io/",
+        "url": "https://clement-cauet.github.io/",
+        "email": "cauet.clement@gmail.com",
+        "location": {
+            "city": "Amiens",
+            "countryCode": "FR"
+        },
+        "profiles": [
+            {
+                "username": "cauet-clement",
+                "url": "https://www.linkedin.com/in/cauet-clement/",
+                "network": "linkedin"
+            },
+            {
+                "username": "Clement-Cauet",
+                "url": "https://github.com/Clement-Cauet",
+                "network": "github"
+            }
+        ]
+    },
+    "education": [
+        {
+            "area": "Numérique et Objets connectés",
+            "institution": "UniLaSalle",
+            "location": "Amiens",
+            "studyType": "Ingénieur",
+            "startDate": "2022-09-24"
+        },
+        {
+            "area": "Systèmes Numériques",
+            "institution": "La Providence",
+            "location": "Amiens",
+            "studyType": "Brevet de Technicien Supérieur",
+            "startDate": "2020-09-05",
+            "endDate": "2022-06-23"
+        }
+    ],
+    "skills": [
+        {
+            "keywords": [
+                "Java",
+                "Kotlin",
+                "C++",
+                "JavaScript",
+                "Python",
+                "SQL"
+            ],
+            "name": "Langage"
+        },
+        {
+            "keywords": [
+                "React",
+                "Angular"
+            ],
+            "name": "Framework"
+        },
+        {
+            "keywords": [
+                "MySQL",
+                "PostgreSQL",
+                "SQLite",
+                "Firebase"
+            ],
+            "name": "Base de données"
+        },
+        {
+            "keywords": [
+                "Docker",
+                "VMware"
+            ],
+            "name": "Virtualisation"
+        },
+        {
+            "keywords": [
+                "Windows",
+                "Fedora",
+                "Debian",
+                "Ubuntu"
+            ],
+            "name": "Système d'exploitation"
+        },
+        {
+            "keywords": [
+                "Git",
+                "Ansible",
+                "Terraform"
+            ],
+            "name": "Système de gestion"
+        },
+        {
+            "keywords": [
+                "Résolution de problèmes",
+                "Adaptabilité",
+                "Autonomie",
+                "Esprit d'équipe",
+                "Gestion du temps et des priorités"
+            ],
+            "name": "Soft Skills"
+        }
+    ],
+    "work": [
+        {
+            "website": "https://generation-ia.com/",
+            "name": "Génération-IA",
+            "location": "Boves",
+            "position": "Alternant - Développeur Mobile",
+            "startDate": "2022-08-28",
+            "highlights": [
+                "Concevoir des architectures de serveurs API robustes, facilitant des échanges fluides entre diverses applications.",
+                "Optimiser des processus de développement, améliorant l'efficacité d'initialisation et la maintenabilité du projet.",
+                "Faciliter la documentation technique de l'application, assurant une compréhension claire et un accès facile pour les membres de l'équipe."
+            ]
+        },
+        {
+            "name": "Croix Rouge Française",
+            "location": "Amiens",
+            "position": "Stagiaire - Développeur Web",
+            "startDate": "2021-05-21",
+            "endDate": "2021-06-30",
+            "highlights": [
+                "Concevoir et déployer des outils de suivi des stocks, améliorant la logistique au sein de l'unité locale.",
+                "Coordonner l'approvisionnement de besoins d'urgence."
+            ]
+        }
+    ],
+    "languages": [
+        {
+            "language": "Français",
+            "fluency": "Natif"
+        },
+        {
+            "language": "Anglais",
+            "fluency": "B2"
+        }
+    ],
+    "interests": [
+        {
+            "keywords": [
+                "Natation",
+                "Randonnée",
+                "Secourisme",
+                "Bénévolat"
+            ]
+        }
+    ]
+}

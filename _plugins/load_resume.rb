@@ -1,22 +1,18 @@
 require 'json'
-require 'net/http'
-require 'uri'
 
 module Jekyll
     class LoadResumeJson < Generator
         safe true
 
         def generate(site)
-            gist_url = site.data['env']['gist_url']
-            uri = URI.parse(gist_url)
-            response = Net::HTTP.get_response(uri)
-
-            if response.is_a?(Net::HTTPSuccess)
-                site.data['resume'] = JSON.parse(response.body)
-                Jekyll.logger.info "Resume JSON fetched successfully from Gist:", gist_url
-            else
-                Jekyll.logger.warn "Failed to fetch resume JSON from Gist:", gist_url
-            end
+        file_path = File.join(site.source, 'assets', 'json', 'resume.json')
+        if File.exist?(file_path)
+            file = File.read(file_path)
+            site.data['resume'] = JSON.parse(file)
+            Jekyll.logger.info "Resume JSON file loaded successfully:", file_path
+        else
+            Jekyll.logger.warn "Resume JSON file not found:", file_path
+        end
         end
     end
 end

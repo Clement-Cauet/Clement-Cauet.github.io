@@ -1,5 +1,4 @@
 async function fetchResume() {
-    const gistUrl = document.querySelector('meta[name="gist-url"]').content;
     try {
         const response = await fetch(gistUrl);
         if (!response.ok) throw new Error('Erreur lors du chargement du contenu');

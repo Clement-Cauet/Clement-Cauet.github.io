@@ -47,8 +47,6 @@ jobs:
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
-          GIST_URL: ${{ secrets.GIST_URL }}
-          OWNER_NAME: ${{ secrets.OWNER_NAME }}
 
       # Automatically uploads an artifact from the './_site' directory by default
       - name: Upload artifact
@@ -61,21 +59,12 @@ jobs:
       - name: Install jsonresume-theme-lucide
         run: npm install jsonresume-theme-lucide
 
-      - name: Fetch resume data
-        run: curl -o resume.json "${{ secrets.GIST_URL }}"
-
-      - name: Set Puppeteer config
-        run: export RESUME_PUPPETEER_NO_SANDBOX=1
-
+      - name: Ensure assets/pdf directory exists
+        run: mkdir -p assets/pdf
+      
       - name: Generate resume
-        run: resume export resume.pdf --theme lucide --format pdf
-
-      - name: Verify structure
-        run: pwd && ls -la
-
-      - name: Move resume to assets
-        run: mv resume.pdf assets/pdf/resume.pdf
-
+        run: resume export assets/pdf/resume.pdf --theme lucide --format pdf
+        working-directory: assets/json
 
   # Deployment job
   deploy:
