@@ -1,13 +1,3 @@
-async function fetchResume() {
-    try {
-        const response = await fetch(gistUrl);
-        if (!response.ok) throw new Error('Erreur lors du chargement du contenu');
-        resume = await response.json();
-    } catch (error) {
-        console.error("Erreur lors du chargement du CV :", error);
-    }
-}
-
 function extractOwnerRepo(url) {
     const regex = /https:\/\/github\.com\/([^\/]+)\/([^\/]+)/;
     const match = url.match(regex);
