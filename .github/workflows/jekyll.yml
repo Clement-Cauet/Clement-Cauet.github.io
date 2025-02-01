@@ -61,11 +61,9 @@ jobs:
         run: curl -o resume.json "${{ secrets.GIST_URL }}"
 
       - name: Set Puppeteer config
-        run: echo '{"args":["--no-sandbox"]}' > ~/.puppeteerrc.json
+        run: export RESUME_PUPPETEER_NO_SANDBOX=1
 
       - name: Generate resume
-        env:
-          PUPPETEER_CONFIG: ~/.puppeteerrc.json
         run: resume export resume.pdf --theme lucide --format pdf
 
       - name: Upload artifact
