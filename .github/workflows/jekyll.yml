@@ -53,6 +53,19 @@ jobs:
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v3
 
+      - name: Install resume-cli
+        run: npm install -g resume-cli
+
+      - name: Install jsonresume-theme-lucide
+        run: npm install jsonresume-theme-lucide
+
+      - name: Fetch resume data
+        run: curl -o resume.json "${{ secrets.GIST_URL }}"
+
+      - name: Generate resume
+        run: PUPPETEER_EXECUTABLE_PATH=$(which chromium) PUPPETEER_ARGS="--no-sandbox" resume export resume.pdf --theme lucide --format pdf
+
+
   # Deployment job
   deploy:
     environment:
