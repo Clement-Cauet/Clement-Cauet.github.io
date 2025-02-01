@@ -71,6 +71,9 @@ jobs:
       - name: Move resume to assets/pdf directory
         run: mv resume.pdf assets/pdf/resume.pdf
 
+      - name: Verify resume.pdf exists
+        run: ls assets/pdf
+
   # Deployment job
   deploy:
     environment:
