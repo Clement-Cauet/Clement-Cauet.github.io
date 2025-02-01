@@ -53,47 +53,6 @@ jobs:
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v3
 
-      # Generate PDF resume on server and move it to _site
-      - name: Install resume-cli
-        run: npm install -g resume-cli
-      
-      - name: Install Lucide theme
-        run: npm install jsonresume-theme-lucide
-
-      - name: Fetch resume.json from Gist
-        run: curl -o resume.json "${{ secrets.GIST_URL }}"
-
-      - name: Verify resume.json
-        run: cat resume.json
-
-      - name: Generate PDF resume
-        run: |
-          export PUPPETEER_SKIP_DOWNLOAD=true
-          export PUPPETEER_EXECUTABLE_PATH=$(which chromium)
-          export PUPPETEER_ARGS="--no-sandbox --disable-setuid-sandbox"
-          resume export resume.pdf --theme lucide --format pdf
-
-      - name: Debug current directory
-        run: pwd && ls -la
-
-      - name: Verify PDF resume
-        run: file resume.pdf
-
-      - name: Create PDF directory
-        run: mkdir -p assets/pdf
-
-      - name: Verify PDF directory
-        run: ls assets/pdf
-
-      - name: Move PDF resume to assets
-        run: |
-          if [ -f resume.pdf ]; then
-            mv resume.pdf assets/pdf
-          else
-            echo "resume.pdf not found"
-            exit 1
-          fi
-
   # Deployment job
   deploy:
     environment:
