@@ -61,12 +61,15 @@ jobs:
 
       - name: Ensure assets/pdf directory exists
         run: mkdir -p assets/pdf
+
+      - name: Verify resume.json data
+        run: cat assets/json/resume.json
       
       - name: Generate resume
-        run: resume export assets/pdf/resume.pdf --resume assets/json/resume.json --theme lucide --format pdf
-
-      - name: Debug output
-        run: ls -l assets/pdf
+        run: resume export resume.pdf --resume assets/json/resume.json --theme lucide --format pdf
+      
+      - name: Move resume to assets/pdf directory
+        run: mv resume.pdf assets/pdf/resume.pdf
 
   # Deployment job
   deploy:
