@@ -32,7 +32,6 @@ code {
     flex-direction: column;
     position: -webkit-sticky;
     position: sticky;
-    overflow-y: auto;
     max-height: calc(100vh - 8rem);
     top: 6rem;
     background-color: white;
@@ -61,6 +60,7 @@ code {
     display: flex;
     flex-direction: column;
     list-style: none;
+    overflow-y: auto;
 
     li {
         cursor: pointer;

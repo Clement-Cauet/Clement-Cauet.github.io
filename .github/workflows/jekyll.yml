@@ -63,8 +63,7 @@ jobs:
         run: mkdir -p assets/pdf
       
       - name: Generate resume
-        run: resume export assets/pdf/resume.pdf --theme lucide --format pdf
-        working-directory: assets/json
+        run: resume export assets/pdf/resume.pdf --resume assets/json/resume.json --theme lucide --format pdf
 
   # Deployment job
   deploy:
