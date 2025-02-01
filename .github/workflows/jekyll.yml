@@ -62,14 +62,17 @@ jobs:
       - name: Ensure assets/pdf directory exists
         run: mkdir -p _site/assets/pdf
 
-      - name: Copy resume.json to current directory
-        run: cp assets/json/resume.json .
+      - name: Fetch resume data
+        run: curl -o resume.json "https://gist.githubusercontent.com/Clement-Cauet/fed79cb3909c38eec0fc7345116fa939/raw/fcce8f4e5f8ee69160c7caa39553d747cde7b408/resume.json"
+
+      - name: Set Puppeteer config
+        run: export RESUME_PUPPETEER_NO_SANDBOX=1
       
       - name: Generate resume
         run: resume export resume.pdf --theme lucide --format pdf
       
-      - name: Move resume to assets/pdf directory
-        run: mv resume.pdf _site/assets/pdf/resume.pdf
+      - name: Move resume to assets
+        run: mv resume.pdf assets/pdf/resume.pdf
 
       - name: Remove resume.json
         run: rm resume.json

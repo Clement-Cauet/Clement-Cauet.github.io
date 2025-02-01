@@ -29,6 +29,5 @@ async function loadMenuProjects() {
 }
 
 document.addEventListener('DOMContentLoaded', async() => {
-    fetchResume();
     loadMenuProjects();
 });
