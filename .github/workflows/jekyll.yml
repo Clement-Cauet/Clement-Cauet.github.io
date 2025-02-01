@@ -60,7 +60,7 @@ jobs:
         run: npm install jsonresume-theme-lucide
 
       - name: Ensure assets/pdf directory exists
-        run: mkdir -p _site/assets/pdf
+        run: mkdir -p assets/pdf
 
       - name: Fetch resume data
         run: curl -o resume.json "https://gist.githubusercontent.com/Clement-Cauet/fed79cb3909c38eec0fc7345116fa939/raw/fcce8f4e5f8ee69160c7caa39553d747cde7b408/resume.json"
