@@ -72,13 +72,16 @@ jobs:
         run: resume export resume.pdf --theme lucide --format pdf
       
       - name: Move resume to assets/pdf directory
-        run: mv resume.pdf assets/pdf/resume.pdf
+        run: mv resume.pdf _site/assets/pdf/resume.pdf
 
       - name: Verify resume.pdf exists
         run: ls assets/pdf
 
       - name: Remove resume.json
         run: rm resume.json
+
+      - name: Verify current directory
+        run: pwd && ls -la
 
   # Deployment job
   deploy:
