@@ -6,7 +6,7 @@ url: https://github.com/gorinje/craft-the-cv2
 force_theme: light
 permalink: pretty
 lang: fr
-theme_color: '#56817A'
+theme_color: '#0077CC'
 fixed_navbar: top
 show_logo: true
 

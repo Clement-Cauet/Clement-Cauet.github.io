@@ -21,7 +21,12 @@ show_sidebar: false
                 {% endif %}
             </a>
             <div class="card-content">
-                <h2 class="title is-4">{{ project.name }}</h2>
+                <div class="card-title">
+                    <h2 class="title is-4">{{ project.name }}</h2>
+                    <a href="{{ project.url }}" target="_blank" class="icon">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
                 <div class="topics"></div>
             </div>
         </div>
