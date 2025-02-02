@@ -3,13 +3,13 @@ layout: default
 show_sidebar: false
 ---
 <div class="section-block">
-    <h2 id="experiences">Expériences</h2>
+    <h2 id="experiences">Expériences Professionelles</h2>
 
     {% for work in site.data.resume.work %}
     <ul class="section-list">
         <li>
             <div class="section-header">
-                <div>
+                <div class="section-date">
                     <code>
                         {% assign startYear = work.startDate | date: "%Y" %}
                         {% assign endYear = work.endDate | date: "%Y" %}
@@ -80,7 +80,7 @@ show_sidebar: false
 </div>
 
 <div class="section-block">
-    <h2 id="formations">Formations</h2>
+    <h2 id="formation">Formation</h2>
 
     {% for education in site.data.resume.education %}
     <ul class="section-list">
@@ -139,22 +139,6 @@ show_sidebar: false
         </li>
         {% endfor %}
     </ul>
-</div>
-
-<div class="section-block">
-    <h2 id="interests">Centres d'intérêts</h2>
-    {% for interest in site.data.resume.interests %}
-    <div>
-        <p>{{ interest.name }}</p>
-    </div>
-    <div>
-        <ul>
-            {% for keyword in interest.keywords %}
-            <li>{{ keyword }}</li>
-            {% endfor %}
-        </ul>
-    </div>
-    {% endfor %}
 </div>
 
 <section class="modal hidden">

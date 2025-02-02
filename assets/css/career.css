@@ -27,6 +27,15 @@
     gap: 1rem;
 }
 
+.section-date {
+    display: flex;
+    flex-direction: column;
+}
+
+.section-date code {
+    background-color: white;
+}
+
 .section-information {
     display: grid;
     grid-template-columns: minmax(12rem, auto) 1fr;
