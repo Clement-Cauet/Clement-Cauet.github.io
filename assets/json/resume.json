@@ -60,7 +60,7 @@
                 "Python",
                 "SQL"
             ],
-            "name": "Langage"
+            "name": "Programmation"
         },
         {
             "keywords": [
@@ -153,17 +153,39 @@
         },
         {
             "language": "Anglais",
-            "fluency": "B2"
+            "fluency": "Courant / B2"
         }
     ],
     "interests": [
         {
             "keywords": [
+                "Open Source",
                 "Natation",
                 "Randonnée",
-                "Secourisme",
-                "Bénévolat"
+                "Secourisme"
             ]
+        }
+    ],
+    "projects": [
+        {
+            "name": "Thème Lucide - JsonResume",
+            "startDate": "2025-01-24",
+            "endDate": "2025-02-09",
+            "highlights": [
+                "Concevoir un thème de CV en HTML/CSS/JS.",
+                "Intégrer le thème Lucide au projet JsonResume."
+            ],
+            "url": "https://github.com/Clement-Cauet/jsonresume-theme-lucide"
+        },
+        {
+            "name": "Navigateur-Web",
+            "startDate": "2024-09-27",
+            "endDate": "2024-11-08",
+            "highlights": [
+                "Développer un navigateur web basé sur Chromium en Angular.",
+                "Intégrer un bloqueur de publicités reposant sur une base de données open source."
+            ],
+            "url": "https://github.com/Gregory-febvin/Navigateur-Web"
         }
     ]
 }
