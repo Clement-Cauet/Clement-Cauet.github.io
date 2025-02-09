@@ -57,6 +57,7 @@
                 "HTML",
                 "CSS",
                 "JavaScript",
+                "TypeScript",
                 "Python",
                 "SQL"
             ],
@@ -67,6 +68,7 @@
                 "React",
                 "React Native",
                 "Angular",
+                "Node.js",
                 "Jetpack Compose"
             ],
             "name": "Framework"
@@ -176,6 +178,16 @@
                 "Intégrer le thème Lucide au projet JsonResume."
             ],
             "url": "https://github.com/Clement-Cauet/jsonresume-theme-lucide"
+        },
+        {
+            "name": "FakeStore",
+            "startDate": "2025-01-06",
+            "endDate": "2025-01-21",
+            "highlights": [
+                "Développer une application mobile e-commerce en Kotlin avec Jetpack Compose.",
+                "Exploiter une API REST pour récupérer des données de produits."
+            ],
+            "url": "https://github.com/Clement-Cauet/FakeStore"
         },
         {
             "name": "Navigateur-Web",
