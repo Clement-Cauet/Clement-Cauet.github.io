@@ -50,10 +50,17 @@ jobs:
         run: npm install -g resume-cli
       - name: Install jsonresume-theme-lucide
         run: npm install jsonresume-theme-lucide
+      - name: Install jq
+        run: sudo apt-get install -y jq
       - name: Ensure assets/pdf directory exists
         run: mkdir -p assets/pdf
       - name: Generate resume
         run: resume export assets/pdf/resume.pdf --resume assets/json/resume.json --theme lucide --format pdf
+      - name: Extract name from resume.json and rename PDF
+        run: |
+          first_name=$(jq -r '.basics.name' assets/json/resume.json | cut -d' ' -f1 | tr '[:upper:]' '[:lower:]')
+          last_name=$(jq -r '.basics.name' assets/json/resume.json | cut -d' ' -f2 | tr '[:upper:]' '[:lower:]')
+          mv assets/pdf/resume.pdf assets/pdf/${first_name}_${last_name}_resume.pdf
       
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
