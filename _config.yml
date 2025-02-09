@@ -26,6 +26,4 @@ plugins:
   - jekyll-remote-include
   - jekyll-dotenv
 
-env:
-  gist_url: "{{ site.data.env.GIST_URL }}"
-  owner_name: "{{ site.data.env.OWNER_NAME }}"
+resume_pdf: "clement_cauet_resume.pdf"
