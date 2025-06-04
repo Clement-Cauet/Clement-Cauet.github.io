@@ -5,7 +5,7 @@
     "basics": {
         "name": "Clément Cauet",
         "phone": "+33 6 01 05 54 09",
-        "label": "Développeur d'application",
+        "label": "Ingénieur en développement d'applications",
         "picture": "https://avatars.githubusercontent.com/u/70692830?s=400&u=cac932fa74c596fc7d2f7bed91e8a25f97ebc78e&v=4",
         "summary": "Motivé par la création de solutions techniques qui facilitent la vie des utilisateurs, je combine autonomie, adaptabilité et esprit d’analyse pour relever des défis complexes. Mon objectif : concevoir des outils performants et intuitifs, toujours centrés sur les besoins réels.",
         "website": "https://clement-cauet.github.io/",
@@ -58,6 +58,7 @@
                 "CSS",
                 "JavaScript",
                 "TypeScript",
+                "PHP",
                 "Python",
                 "SQL"
             ],
@@ -69,7 +70,8 @@
                 "React Native",
                 "Angular",
                 "Node.js",
-                "Jetpack Compose"
+                "Jetpack Compose",
+                "Spring Boot"
             ],
             "name": "Framework"
         },
@@ -127,7 +129,7 @@
             "location": "Boves",
             "position": "Alternant - Développeur Mobile",
             "startDate": "2022-08-28",
-            "endDate": "2025-08-29",
+            "endDate": "2025-06-27",
             "highlights": [
                 "Dévolopper une application mobile axée sur l'amélioration de la performance professionnelle.",
                 "Concevoir des architectures de serveurs API robustes, facilitant des échanges fluides entre diverses applications.",
@@ -170,6 +172,15 @@
     ],
     "projects": [
         {
+            "name": "Trans80 - Application Web",
+            "startDate": "2025-03-30",
+            "endDate": "2025-04-25",
+            "highlights": [
+                "Développer une application web en Angular et Tailwind.",
+                "Exploiter des données Open Source (GTFS) via une API Java Spring Boot."
+            ]
+        },
+        {
             "name": "Thème Lucide - JsonResume",
             "startDate": "2025-01-24",
             "endDate": "2025-02-09",
@@ -180,7 +191,7 @@
             "url": "https://github.com/Clement-Cauet/jsonresume-theme-lucide"
         },
         {
-            "name": "FakeStore",
+            "name": "FakeStore - Application Mobile",
             "startDate": "2025-01-06",
             "endDate": "2025-01-21",
             "highlights": [
